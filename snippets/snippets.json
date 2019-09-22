@@ -540,14 +540,14 @@
 
   "isPlainObject": {
     "scope": "javascript,typescript",
-    "prefix": "isPlainObject",
+    "prefix": "isplainobject",
     "body": ["typeof ${1:value} === 'object' && !Array.isArray($1) && $1 !== null$0"],
     "description": "Check if value is a plain object."
   },
 
   "isNil": {
     "scope": "javascript,typescript",
-    "prefix": "isNil",
+    "prefix": "isnil",
     "body": ["typeof ${1:value} === 'undefined' || $1 === null$0"],
     "description": "Check if value is null or undefined."
   }

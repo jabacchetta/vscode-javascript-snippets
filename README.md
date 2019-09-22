@@ -219,5 +219,5 @@ Snippets](https://marketplace.visualstudio.com/items?itemName=svipas.control-sni
 | `to` | typeof | typeof operator. |
 | `io` | instanceof | instanceof operator. |
 | `aia` | arrayIsArray | Array.isArray() method. |
-| `isPlainObject` | isPlainObject | Check if value is a plain object. |
-| `isNil` | isNil | Check if value is null or undefined. |
+| `isplainobject` | isPlainObject | Check if value is a plain object. |
+| `isnil` | isNil | Check if value is null or undefined. |
