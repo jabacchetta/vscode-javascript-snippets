@@ -7,7 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.2] - 2019-09-21
+
+### Changed
+
+* Update VSCode Marketplace icon and banner color.
+
 ## [1.0.1] - 2019-09-21
+
+### Changed
 
 * Update VSCode Marketplace theme.
 
