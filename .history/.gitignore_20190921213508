@@ -1,0 +1,7 @@
+# WebStorm files
+.idea/
+.DS_Store
+
+# Visual Studio Code
+.vscode/
+jsconfig.json
