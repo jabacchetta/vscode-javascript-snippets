@@ -205,122 +205,132 @@
   "consoleLog": {
     "scope": "javascript,typescript",
     "prefix": "cl",
-    "body": ["console.log(${1:message});$0"],
+    "body": ["console.log(${0});"],
     "description": "Console log."
   },
 
   "consoleError": {
     "scope": "javascript,typescript",
     "prefix": "ce",
-    "body": ["console.error($1:message);$0"],
+    "body": ["console.error(${0});"],
     "description": "Console error."
   },
 
   "consoleWarn": {
     "scope": "javascript,typescript",
     "prefix": "cw",
-    "body": ["console.warn($1:message);$0"],
+    "body": ["console.warn(${0});"],
     "description": "Console warn."
   },
 
-  "consoleLogNote": {
+  "consoleLogClipboard": {
     "scope": "javascript,typescript",
-    "prefix": "cln",
-    "body": [
-      "// ====== LOG ======",
-      "console.log('\\n');",
-      "console.group('Log');",
-      "console.log('${1:message}');",
-      "console.groupEnd();",
-      "console.log('\\n');",
-      "$0"
-    ],
-    "description": "Console log a message, wrapped in a console group."
+    "prefix": "clc",
+    "body": ["console.log({ $CLIPBOARD });${0}"],
+    "description": "Console log the value you have copied to your clipboard, inside of an object (for an automatic label)."
   },
 
-  "consoleLogValues": {
+  "consoleLogMessage": {
     "scope": "javascript,typescript",
-    "prefix": "clv",
+    "prefix": "clm",
+    "body": ["console.log('${0}');"],
+    "description": "Console log message."
+  },
+
+  "consoleLogObject": {
+    "scope": "javascript,typescript",
+    "prefix": "clo",
+    "body": ["console.log({ ${0} });"],
+    "description": "Console log an object, in which variables can be inserted (for automatic labels)."
+  },
+
+  "consoleLogGroup": {
+    "scope": "javascript,typescript",
+    "prefix": "clg",
     "body": [
-      "// ====== LOG ======",
+      "// ====== LOG START ======",
       "console.log('\\n');",
       "console.group('Log');",
-      "Object.entries({ ${1:$CLIPBOARD} }).forEach(([key, val]) => {",
-      "  console.group(`%c\\${key}`, 'color: blue; font-size: 12px;');",
-      "  console.log(val);",
-      "  console.groupEnd();",
-      "});",
+      "console.log(${1});",
       "console.groupEnd();",
       "console.log('\\n');",
-      "$0"
+      "// ====== LOG END ======",
+      "${0}"
     ],
-    "description": "Console log values (defaulting to clipboard), wrapped in a console group."
+    "description": "Console log, wrapped in a formatted and styled console group."
   },
 
   "consoleLogAnalysis": {
     "scope": "javascript,typescript",
     "prefix": "cla",
     "body": [
-      "// ====== LOG ======",
-      "console.log('\\n');",
-      "console.group('Log');",
+      "// ====== LOG START ======",
+      "const logStandardDetails = (key, value) => {",
+      "  console.group('value');",
+      "  console.log(value);",
+      "  console.groupEnd();",
+      "  console.group('type');",
+      "  console.log(typeof value);",
+      "  console.groupEnd();",
+      "  console.group('count');",
+      "  console.count(key);",
+      "  console.groupEnd();",
+      "  console.group('trace');",
+      "  console.trace();",
+      "  console.groupEnd();",
+      "}",
       "",
-      "Object.entries({ ${1:$CLIPBOARD} }).forEach(([key, value]) => {",
-      "  const isObject = typeof value === 'object' && value !== null;",
+      "const logObjectDetails = (value) => {",
       "  let logValue = value;",
       "  let isCircularStructure = false;",
       "",
-      "  // Log object at this moment in time (rather than its potentially mutated value) by using",
-      "  // stringify to take a snapshot of its value. Handle circular structures that can't be converted",
-      "  // to JSON (e.g.window).",
-      "  if (isObject) {",
-      "    try {",
-      "      logValue = JSON.parse(JSON.stringify(value));",
-      "    } catch (error) {",
-      "      isCircularStructure = true;",
-      "    }",
+      "  try {",
+      "    // Snapshot of log-time value, rather than current (potentially-mutated) value.",
+      "    logValue = JSON.parse(JSON.stringify(value));",
+      "  } catch (error) {",
+      "    // Handle values that can't be converted to JSON (e.g.window).",
+      "    isCircularStructure = true;",
       "  }",
       "",
-      "  console.group(`%c\\${key}`, 'color: blue;');",
-      "  console.group('log value');",
+      "  console.group('log-time value (before any potential mutations)');",
       "",
       "  if (isCircularStructure) {",
-      "    console.warn('Log value not determined (object is circular structure). Check current value.');",
+      "    console.log('Not determined (object is a circular structure).');",
       "  } else {",
       "    console.log(logValue);",
       "  }",
       "",
       "  console.groupEnd();",
-      "  console.groupCollapsed('more');",
-      "  console.groupCollapsed('value type');",
-      "  console.log(typeof logValue);",
+      "  console.group('table');",
+      "  console.table(logValue);",
       "  console.groupEnd();",
-      "  console.groupCollapsed('log count');",
-      "  console.count(isCircularStructure ? logValue : JSON.stringify(logValue));",
-      "  console.groupEnd();",
-      "  console.groupCollapsed('trace');",
-      "  console.trace();",
-      "  console.groupEnd();",
+      "}",
       "",
-      "  if (isObject) {",
-      "    console.groupCollapsed('current value');",
-      "    console.warn('Current (potentially mutated) value.');",
-      "    console.log(value);",
-      "    console.groupEnd();",
-      "    console.groupCollapsed('value table');",
-      "    console.table(logValue);",
-      "    console.groupEnd();",
+      "const logDetails = (key, value) => {",
+      "  logStandardDetails(key, value);",
+      "  ",
+      "  if (typeof value === 'object' && value !== null) {",
+      "    logObjectDetails(value);",
       "  }",
+      "}",
       "",
-      "  console.groupEnd();",
-      "  console.groupEnd();",
-      "});",
+      "const logAllValues = () => {",
+      "  Object.entries({ ${1} }).forEach(([key, value]) => {",
+      "    console.groupCollapsed(`%c\\${key}`, 'color: blue;');",
+      "    logDetails(key, value)",
+      "    console.groupEnd();",
+      "  });",
+      "}",
       "",
+      "console.log('\\n');",
+      "console.group('Log');",
+      "logAllValues()",
       "console.groupEnd();",
       "console.log('\\n');",
-      "$0"
+      "// ====== LOG END ======",
+      "${0}"
     ],
-    "description": "Console log values (defaulting to clipboard) and their details, wrapped in a console group."
+    "description": "Console log an object, in which variables can be inserted. Includes value, type, count, and trace for all values. Includes log-time value and table for objects. Wrapped in a formatted and styled console group."
   },
 
   "tryCatch": {

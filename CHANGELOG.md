@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.0] - 2020-05-02
+
+### Added
+
+* Added new clipboard console log snippet.
+
+### Removed
+
+* Removed snippet for the standard (non-analysis) version of console logging values wrapped in a console group.
+
+### Changed
+
+* Simplified existing console snippets.
+* Updated prefixes for existing console snippets.
+
 ## [1.0.6] - 2019-11-03
 
 ### Added

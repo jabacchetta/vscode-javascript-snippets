@@ -28,9 +28,7 @@ pollution.
 * Includes snippets for commonly-needed utilities, which can be useful when experimenting in a scratch file or when
   working on small projects where you don't intend to import a JavaScript utility library (e.g.
   Lodash).
-* Includes snippets for advanced console logs that are colorized, grouped, and edge-case-resistant
-  (e.g. handles object mutation).
-
+* Includes snippets for advanced console logs that are colorized, grouped, and edge-case-resistant.
 
 ## Style
 
@@ -141,9 +139,11 @@ Snippets](https://marketplace.visualstudio.com/items?itemName=svipas.control-sni
 | `cl` | consoleLog | Console log. |
 | `ce` | consoleError | Console error. |
 | `cw` | consoleWarn | Console warn. |
-| `cln` | consoleLogNote | Console log a message, wrapped in a console group. |
-| `clv` | consoleLogValues | Console log values (defaulting to clipboard), wrapped in a console group. |
-| `cla` | consoleLogAnalysis | Console log values (defaulting to clipboard) and their details, wrapped in a console group. |
+| `clc` | consoleLogClipboard | Console log the value you have copied to your clipboard, inside of an object (for an automatic label). |
+| `clm` | consoleLogMessage | Console log a message. |
+| `clo` | consoleLogObject | Console log an object, in which variables can be inserted (for automatic labels). |
+| `clg` | consoleLogGroup | Console log, wrapped in a formatted and styled console group. |
+| `cla` | consoleLogAnalysis | Console log an object, in which variables can be inserted. Includes value, type, count, and trace for all values. Includes log-time value and table for objects. Wrapped in a formatted and styled console group. |
 
 ### Exception
 
