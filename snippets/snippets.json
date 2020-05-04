@@ -1,119 +1,119 @@
 {
   "arrayMerge": {
     "scope": "javascript,typescript",
-    "prefix": "am",
-    "body": ["[...${1:array}]$0"],
+    "prefix": ["am"],
+    "body": ["[...${0:array}]"],
     "description": "Shallow-copy a single array (clone) or multiple arrays (merge) to a new array literal via the spread operator."
   },
 
   "range": {
     "scope": "javascript,typescript",
-    "prefix": "range",
-    "body": ["[...Array(${1:length}).keys()]$0"],
+    "prefix": ["range"],
+    "body": ["[...Array(${0:length}).keys()]"],
     "description": "An array containing a sequence of numbers from 0 up to, but not including, length."
   },
 
   "forEach": {
     "scope": "javascript,typescript",
-    "prefix": "foreach",
+    "prefix": ["foreach"],
     "body": ["${1:array}.forEach((${2}) => {", "  $0", "});"],
     "description": "Array.prototype.forEach() method."
   },
 
   "map": {
     "scope": "javascript,typescript",
-    "prefix": "map",
+    "prefix": ["map"],
     "body": ["${1:array}.map((${2:element}) => {", "  $0", "});"],
     "description": "Array.prototype.map() method."
   },
 
   "reduce": {
     "scope": "javascript,typescript",
-    "prefix": "reduce",
+    "prefix": ["reduce"],
     "body": ["${1:array}.reduce((${2:accumulator}, ${3:currentValue}) => {", "  $0", "}$4);"],
     "description": "Array.prototype.reduce() method."
   },
 
   "reduceRight": {
     "scope": "javascript,typescript",
-    "prefix": "reduceright",
+    "prefix": ["reduceright"],
     "body": ["${1:array}.reduceRight((${2:accumulator}, ${3:currentValue}) => {", "  $0", "}$4);"],
     "description": "Array.prototype.reduceRight() method."
   },
 
   "filter": {
     "scope": "javascript,typescript",
-    "prefix": "filter",
+    "prefix": ["filter"],
     "body": ["${1:array}.filter((${2:element}) => {", "  $0", "});"],
     "description": "Array.prototype.filter() method."
   },
 
   "find": {
     "scope": "javascript,typescript",
-    "prefix": "find",
+    "prefix": ["find"],
     "body": ["${1:array}.find((${2:element}) => {", "  $0", "});"],
     "description": "Array.prototype.find() method."
   },
 
   "findIndex": {
     "scope": "javascript,typescript",
-    "prefix": "findindex",
+    "prefix": ["findindex"],
     "body": ["${1:array}.findIndex((${2:element}) => {", "  $0", "});"],
     "description": "Array.prototype.findIndex() method."
   },
 
   "some": {
     "scope": "javascript,typescript",
-    "prefix": "some",
+    "prefix": ["some"],
     "body": ["${1:array}.some((${2:element}) => {", "  $0", "});"],
     "description": "Array.prototype.some() method."
   },
 
   "every": {
     "scope": "javascript,typescript",
-    "prefix": "every",
+    "prefix": ["every"],
     "body": ["${1:array}.every((${2:element}) => {", "  $0", "});"],
     "description": "Array.prototype.every() method."
   },
 
   "flatMap": {
     "scope": "javascript,typescript",
-    "prefix": "flatmap",
+    "prefix": ["flatmap"],
     "body": ["${1:array}.flatMap((${2:element}) => {", "  $0", "});"],
     "description": "Array.prototype.flatMap() method."
   },
 
   "constAssignment": {
     "scope": "javascript,typescript",
-    "prefix": "ca",
+    "prefix": ["ca"],
     "body": ["const ${1:name} = $0"],
     "description": "Const assignment."
   },
 
   "letAssignment": {
     "scope": "javascript,typescript",
-    "prefix": "la",
+    "prefix": ["la"],
     "body": ["let ${1:name} = $0"],
     "description": "Let assignment."
   },
 
   "constAssignmentDestructuring": {
     "scope": "javascript,typescript",
-    "prefix": "cad",
-    "body": ["const { ${2:key} } = ${1:object};$0"],
+    "prefix": ["cad"],
+    "body": ["const { ${0:key} } = ${1:object};"],
     "description": "Const object destructuring assignment."
   },
 
   "letAssignmentDestructuring": {
     "scope": "javascript,typescript",
-    "prefix": "lad",
-    "body": ["let { ${2:key} } = ${1:object};$0"],
+    "prefix": ["lad"],
+    "body": ["let { ${0:key} } = ${1:object};"],
     "description": "Let object destructuring assignment."
   },
 
   "class": {
     "scope": "javascript,typescript",
-    "prefix": "cs",
+    "prefix": ["cs"],
     "body": [
       "class ${1:${TM_FILEPATH/.*[\\/\\\\]([^\\/\\\\]+)[\\/\\\\]index\\.[jt]s$|.*[\\/\\\\](.*?)(?:\\.[^.]*)$/$1$2/}} {",
       "  $0",
@@ -126,7 +126,7 @@
 
   "classExtends": {
     "scope": "javascript,typescript",
-    "prefix": "cse",
+    "prefix": ["cse"],
     "body": [
       "class ${1:${TM_FILEPATH/.*[\\/\\\\]([^\\/\\\\]+)[\\/\\\\]index\\.[jt]s$|.*[\\/\\\\](.*?)(?:\\.[^.]*)$/$1$2/}} extends ${2:SuperClass} {",
       "  $0",
@@ -139,49 +139,49 @@
 
   "constructor": {
     "scope": "javascript,typescript",
-    "prefix": "ctr",
+    "prefix": ["ctr"],
     "body": ["constructor($1) {", "  super($2);", "  $0", "}"],
     "description": "Class constructor."
   },
 
   "method": {
     "scope": "javascript,typescript",
-    "prefix": "met",
+    "prefix": ["met"],
     "body": ["${1:name}($2) {", "  $0", "}"],
     "description": "Class method."
   },
 
   "if": {
     "scope": "javascript,typescript",
-    "prefix": "if",
+    "prefix": ["if"],
     "body": ["if (${1:condition}) {", "  $0", "}"],
     "description": "If statement."
   },
 
   "else": {
     "scope": "javascript,typescript",
-    "prefix": "el",
+    "prefix": ["el"],
     "body": ["else {", "  $0", "}"],
     "description": "Else statement."
   },
 
   "elseIf": {
     "scope": "javascript,typescript",
-    "prefix": "ei",
+    "prefix": ["ei"],
     "body": ["else if (${1:condition}) {", "  $0", "}"],
     "description": "Else-if statement."
   },
 
   "ternary": {
     "scope": "javascript,typescript",
-    "prefix": "ter",
+    "prefix": ["ter"],
     "body": ["${1:condition} ? ${2:expressionIfTrue} : ${0:expressionIfFalse}"],
     "description": "Ternary operator."
   },
 
   "switch": {
     "scope": "javascript,typescript",
-    "prefix": "switch",
+    "prefix": ["switch"],
     "body": [
       "switch (${1:key}) {",
       "  case ${2:value}:",
@@ -197,56 +197,56 @@
 
   "case": {
     "scope": "javascript,typescript",
-    "prefix": "case",
+    "prefix": ["case"],
     "body": ["case ${1:value}:", "  $0", "  break;"],
     "description": "Case clause."
   },
 
   "consoleLog": {
     "scope": "javascript,typescript",
-    "prefix": "cl",
+    "prefix": ["cl"],
     "body": ["console.log(${0});"],
     "description": "Console log."
   },
 
   "consoleError": {
     "scope": "javascript,typescript",
-    "prefix": "ce",
+    "prefix": ["ce"],
     "body": ["console.error(${0});"],
     "description": "Console error."
   },
 
   "consoleWarn": {
     "scope": "javascript,typescript",
-    "prefix": "cw",
+    "prefix": ["cw"],
     "body": ["console.warn(${0});"],
     "description": "Console warn."
   },
 
   "consoleLogClipboard": {
     "scope": "javascript,typescript",
-    "prefix": "clc",
+    "prefix": ["clc"],
     "body": ["console.log({ $CLIPBOARD });${0}"],
     "description": "Console log the value you have copied to your clipboard, inside of an object (for an automatic label)."
   },
 
   "consoleLogMessage": {
     "scope": "javascript,typescript",
-    "prefix": "clm",
+    "prefix": ["clm"],
     "body": ["console.log('${0}');"],
     "description": "Console log message."
   },
 
   "consoleLogObject": {
     "scope": "javascript,typescript",
-    "prefix": "clo",
+    "prefix": ["clo"],
     "body": ["console.log({ ${0} });"],
     "description": "Console log an object, in which variables can be inserted (for automatic labels)."
   },
 
   "consoleLogGroup": {
     "scope": "javascript,typescript",
-    "prefix": "clg",
+    "prefix": ["clg"],
     "body": [
       "// ====== LOG START ======",
       "console.log('\\n');",
@@ -262,7 +262,7 @@
 
   "consoleLogAnalysis": {
     "scope": "javascript,typescript",
-    "prefix": "cla",
+    "prefix": ["cla"],
     "body": [
       "// ====== LOG START ======",
       "const logStandardDetails = (key, value) => {",
@@ -335,77 +335,77 @@
 
   "tryCatch": {
     "scope": "javascript,typescript",
-    "prefix": "tc",
+    "prefix": ["tc"],
     "body": ["try {", "  $0", "} catch (error) {", "", "}"],
     "description": "Try-catch statement."
   },
 
   "tryCatchFinally": {
     "scope": "javascript,typescript",
-    "prefix": "tcf",
+    "prefix": ["tcf"],
     "body": ["try {", "  $0", "} catch (error) {", "", "} finally {", "", "}"],
     "description": "Try-catch-finally statement."
   },
 
   "tryFinally": {
     "scope": "javascript,typescript",
-    "prefix": "tf",
+    "prefix": ["tf"],
     "body": ["try {", "  $0", "} finally {", "", "}"],
     "description": "Try-finally statement."
   },
 
   "throwError": {
     "scope": "javascript,typescript",
-    "prefix": "te",
-    "body": ["throw new ${1|Error,TypeError,RangeError|}(${2});$0"],
+    "prefix": ["te"],
+    "body": ["throw new ${1|Error,TypeError,RangeError|}(${0});"],
     "description": "Throw error object exception."
   },
 
   "function": {
     "scope": "javascript,typescript",
-    "prefix": "function",
+    "prefix": ["function"],
     "body": ["function ${1:name}($2) {", "  $0", "}"],
     "description": "Named function declaration."
   },
 
   "arrowFunction": {
     "scope": "javascript,typescript",
-    "prefix": "af",
+    "prefix": ["af"],
     "body": ["($1) => $0"],
     "description": "Anonymous arrow function expression."
   },
 
   "jsonParse": {
     "scope": "javascript,typescript",
-    "prefix": "jp",
+    "prefix": ["jp"],
     "body": ["JSON.parse(${1:json})$0"],
     "description": "JSON.parse() method."
   },
 
   "jsonStringify": {
     "scope": "javascript,typescript",
-    "prefix": "js",
+    "prefix": ["js"],
     "body": ["JSON.stringify(${1:value})$0"],
     "description": "JSON.stringify() method."
   },
 
   "doWhile": {
     "scope": "javascript,typescript",
-    "prefix": "dowhile",
+    "prefix": ["dowhile"],
     "body": ["do {", "  $0", "} while (${1:condition});"],
     "description": "Do-while loop."
   },
 
   "while": {
     "scope": "javascript,typescript",
-    "prefix": "while",
+    "prefix": ["while"],
     "body": ["while (${1:condition}) {", "  $0", "}"],
     "description": "While loop."
   },
 
   "for": {
     "scope": "javascript,typescript",
-    "prefix": "for",
+    "prefix": ["for"],
     "body": [
       "for (let ${1:index} = 0; $1 < ${2:array}.length; $1++) {",
       "  const ${3:element} = $2[$1];",
@@ -417,7 +417,7 @@
 
   "forIn": {
     "scope": "javascript,typescript",
-    "prefix": "forin",
+    "prefix": ["forin"],
     "body": [
       "for (const ${1:key} in ${2:object}) {",
       "  if ($2.hasOwnProperty($1)) {",
@@ -431,134 +431,134 @@
 
   "forOf": {
     "scope": "javascript,typescript",
-    "prefix": "forof",
+    "prefix": ["forof"],
     "body": ["for (const ${1:iterator} of ${2:object}) {", "  $0", "}"],
     "description": "For-of loop."
   },
 
   "useStrict": {
     "scope": "javascript,typescript",
-    "prefix": "use",
+    "prefix": ["use"],
     "body": ["'use strict';$0"],
     "description": "Use strict statement."
   },
 
   "import": {
     "scope": "javascript,typescript",
-    "prefix": "imp",
-    "body": ["import ${2:module} from ${1};$0"],
+    "prefix": ["imp"],
+    "body": ["import ${0:module} from '${1}';"],
     "description": "Import module."
   },
 
   "exportDefault": {
     "scope": "javascript,typescript",
-    "prefix": "expd",
+    "prefix": ["expd"],
     "body": ["export default $0"],
     "description": "Default export."
   },
 
   "export": {
     "scope": "javascript,typescript",
-    "prefix": "exp",
+    "prefix": ["exp"],
     "body": ["export $0"],
     "description": "Named export."
   },
 
   "objectMerge": {
     "scope": "javascript,typescript",
-    "prefix": "om",
-    "body": ["{ ...${1:object} }$0"],
+    "prefix": ["om"],
+    "body": ["{ ...${0:object} }"],
     "description": "Shallow-copy a single object (clone) or multiple objects (merge) to a new object literal via the spread operator. Similar to the Object.assign() method, but has the added benefit of not allowing for shallow mutations."
   },
 
   "objectEntries": {
     "scope": "javascript,typescript",
-    "prefix": "oe",
-    "body": ["Object.entries(${1:object})$0"],
+    "prefix": ["oe"],
+    "body": ["Object.entries(${0:object})"],
     "description": "Object.entries() method."
   },
 
   "objectFromEntries": {
     "scope": "javascript,typescript",
-    "prefix": "ofe",
-    "body": ["Object.fromEntries(${1:iterable})$0"],
+    "prefix": ["ofe"],
+    "body": ["Object.fromEntries(${0:iterable})"],
     "description": "Object.fromEntries() method."
   },
 
   "objectKeys": {
     "scope": "javascript,typescript",
-    "prefix": "ok",
-    "body": ["Object.keys(${1:object})$0"],
+    "prefix": ["ok"],
+    "body": ["Object.keys(${0:object})"],
     "description": "Object.keys() method."
   },
 
   "objectValues": {
     "scope": "javascript,typescript",
-    "prefix": "ov",
-    "body": ["Object.values(${1:object})$0"],
+    "prefix": ["ov"],
+    "body": ["Object.values(${0:object})"],
     "description": "Object.values() method."
   },
 
   "return": {
     "scope": "javascript,typescript",
-    "prefix": "ret",
+    "prefix": ["ret"],
     "body": ["return $0"],
     "description": "Return statement."
   },
 
   "returnMultiline": {
     "scope": "javascript,typescript",
-    "prefix": "retm",
+    "prefix": ["retm"],
     "body": ["return (", "  $0", ");"],
     "description": "Return statement for multiline expression that includes complex values (e.g. JSX)."
   },
 
   "setTimeout": {
     "scope": "javascript,typescript",
-    "prefix": "st",
+    "prefix": ["st"],
     "body": ["setTimeout(() => {", "  $0", "}, ${1:delay});"],
     "description": "setTimeout() method."
   },
 
   "setInterval": {
     "scope": "javascript,typescript",
-    "prefix": "si",
+    "prefix": ["si"],
     "body": ["setInterval(() => {", "  $0", "}, ${1:delay});"],
     "description": "setInterval() method."
   },
 
   "typeof": {
     "scope": "javascript,typescript",
-    "prefix": "to",
-    "body": ["typeof ${1:operand} === $0"],
+    "prefix": ["to"],
+    "body": ["typeof ${0:operand} === '${1|bigint,boolean,function,number,object,string,symbol,undefined|}'"],
     "description": "typeof operator."
   },
 
   "instanceof": {
     "scope": "javascript,typescript",
-    "prefix": "io",
+    "prefix": ["io"],
     "body": ["${1:object} instanceof ${0:constructor}"],
     "description": "instanceof operator."
   },
 
   "arrayIsArray": {
     "scope": "javascript,typescript",
-    "prefix": "aia",
-    "body": ["Array.isArray($0)"],
+    "prefix": ["aia"],
+    "body": ["Array.isArray(${0:value})"],
     "description": "Array.isArray() method."
   },
 
   "isPlainObject": {
     "scope": "javascript,typescript",
-    "prefix": "isplainobject",
-    "body": ["typeof ${1:value} === 'object' && !Array.isArray($1) && $1 !== null$0"],
+    "prefix": ["isPlainObject"],
+    "body": ["typeof ${0:value} === 'object' && !Array.isArray(${0:value}) && ${0:value} !== null"],
     "description": "Check if value is a plain object."
   },
 
   "isNil": {
     "scope": "javascript,typescript",
-    "prefix": "isnil",
-    "body": ["typeof ${1:value} === 'undefined' || $1 === null$0"],
+    "prefix": ["isNil"],
+    "body": ["typeof ${0:value} === 'undefined' || ${0:value} === null"],
     "description": "Check if value is null or undefined."
   }
 }

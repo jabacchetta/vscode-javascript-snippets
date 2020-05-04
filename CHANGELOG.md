@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.0.0] - 2020-05-04
+
+### Changed
+
+* Moved final tabstops for snippets that benefit from improved IntelliSense.
+
 ## [2.0.0] - 2020-05-02
 
 ### Added
