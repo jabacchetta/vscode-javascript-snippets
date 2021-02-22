@@ -2,7 +2,7 @@
   "name": "javascript-snippets",
   "displayName": "JavaScript Snippets",
   "description": "JavaScript (ESNext) code snippets that allow for supercharged auto-completions.",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "engines": {
     "vscode": "^1.38.0"
   },

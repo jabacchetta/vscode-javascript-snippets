@@ -10,7 +10,7 @@
     "scope": "javascript,typescript",
     "prefix": ["uniq"],
     "body": ["[...new Set(${0:array})]"],
-    "description": "Creates a duplicate-free version of an array. "
+    "description": "Creates a duplicate-free version of an array."
   },
 
   "range": {

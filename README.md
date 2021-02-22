@@ -91,17 +91,18 @@ Snippets](https://marketplace.visualstudio.com/items?itemName=svipas.control-sni
 | Prefix | Title | Description |
 | --- | --- | --- |
 | `am` | arrayMerge | Shallow-copy a single array (clone) or multiple arrays (merge) to a new array literal via the spread operator. |
-| `range` | range | An array containing a sequence of numbers from 0 up to, but not including, length.
-| `foreach` | forEach | Array.prototype.forEach() method.
-| `map` | map | Array.prototype.map() method.
-| `reduce` | reduce | Array.prototype.reduce() method.
-| `reduceright` | reduceRight | Array.prototype.reduceRight() method.
-| `filter` | filter | Array.prototype.filter() method.
-| `find` | find | Array.prototype.find() method.
-| `findindex` | findIndex | Array.prototype.findIndex() method.
-| `some` | some | Array.prototype.some() method.
-| `every` | every | Array.prototype.every() method.
-| `flatmap` | flatMap | Array.prototype.flatMap() method.
+| `range` | range | An array containing a sequence of numbers from 0 up to, but not including, length. |
+| `uniq` | uniq | Creates a duplicate-free version of an array. |
+| `foreach` | forEach | Array.prototype.forEach() method. |
+| `map` | map | Array.prototype.map() method. |
+| `reduce` | reduce | Array.prototype.reduce() method. |
+| `reduceright` | reduceRight | Array.prototype.reduceRight() method. |
+| `filter` | filter | Array.prototype.filter() method. |
+| `find` | find | Array.prototype.find() method. |
+| `findindex` | findIndex | Array.prototype.findIndex() method. |
+| `some` | some | Array.prototype.some() method. |
+| `every` | every | Array.prototype.every() method. |
+| `flatmap` | flatMap | Array.prototype.flatMap() method. |
 
 ### Assignment
 
@@ -142,6 +143,9 @@ Snippets](https://marketplace.visualstudio.com/items?itemName=svipas.control-sni
 | `clc` | consoleLogClipboard | Console log the value you have copied to your clipboard, inside of an object (for an automatic label). |
 | `clm` | consoleLogMessage | Console log a message. |
 | `clo` | consoleLogObject | Console log an object, in which variables can be inserted (for automatic labels). |
+| `clr` | consoleLogReturn | Console log. Appended by the logical OR operator (for convenient logging in front of an arrow function's implicit return value). |
+| `clmr` | consoleLogMessageReturn | Console log message. Appended by the logical OR operator (for convenient logging in front of an arrow function's implicit return value). |
+| `clor` | consoleLogObjectReturn | Console log an object, in which variables can be inserted (for automatic labels). Appended by the logical OR operator (for convenient logging in front of an arrow function's implicit return value). |
 | `clg` | consoleLogGroup | Console log, wrapped in a formatted and styled console group. |
 | `cla` | consoleLogAnalysis | Console log an object, in which variables can be inserted. Includes value, type, count, and trace for all values. Includes log-time value and table for objects. Wrapped in a formatted and styled console group. |
 
