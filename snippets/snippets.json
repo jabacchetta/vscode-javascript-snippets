@@ -6,6 +6,13 @@
     "description": "Shallow-copy a single array (clone) or multiple arrays (merge) to a new array literal via the spread operator."
   },
 
+  "uniq": {
+    "scope": "javascript,typescript",
+    "prefix": ["uniq"],
+    "body": ["[...new Set(${0:array})]"],
+    "description": "Creates a duplicate-free version of an array. "
+  },
+
   "range": {
     "scope": "javascript,typescript",
     "prefix": ["range"],
@@ -209,6 +216,13 @@
     "description": "Console log."
   },
 
+  "consoleLogReturn": {
+    "scope": "javascript,typescript",
+    "prefix": ["clr"],
+    "body": [" console.log(${0}) ||"],
+    "description": "Console log. Appended by the logical OR operator (for convenient logging in front of an arrow function's implicit return value)."
+  },
+
   "consoleError": {
     "scope": "javascript,typescript",
     "prefix": ["ce"],
@@ -237,11 +251,25 @@
     "description": "Console log message."
   },
 
+  "consoleLogMessageReturn": {
+    "scope": "javascript,typescript",
+    "prefix": ["clmr"],
+    "body": [" console.log('${0}') ||"],
+    "description": "Console log message. Appended by the logical OR operator (for convenient logging in front of an arrow function's implicit return value)."
+  },
+
   "consoleLogObject": {
     "scope": "javascript,typescript",
     "prefix": ["clo"],
     "body": ["console.log({ ${0} });"],
     "description": "Console log an object, in which variables can be inserted (for automatic labels)."
+  },
+
+  "consoleLogObjectReturn": {
+    "scope": "javascript,typescript",
+    "prefix": ["clor"],
+    "body": [" console.log({ ${0} }) ||"],
+    "description": "Console log an object, in which variables can be inserted (for automatic labels). Appended by the logical OR operator (for convenient logging in front of an arrow function's implicit return value)."
   },
 
   "consoleLogGroup": {
@@ -530,7 +558,9 @@
   "typeof": {
     "scope": "javascript,typescript",
     "prefix": ["to"],
-    "body": ["typeof ${0:operand} === '${1|bigint,boolean,function,number,object,string,symbol,undefined|}'"],
+    "body": [
+      "typeof ${0:operand} === '${1|bigint,boolean,function,number,object,string,symbol,undefined|}'"
+    ],
     "description": "typeof operator."
   },
 

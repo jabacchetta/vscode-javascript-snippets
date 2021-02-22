@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [4.0.0] - 2021-02-22
+
+### Changed
+
+* Added uniq for unique arrays.
+* Added multiple new console logs, to be used in front of an arrow function's implicit return value.
+
 ## [3.0.0] - 2020-05-04
 
 ### Changed
