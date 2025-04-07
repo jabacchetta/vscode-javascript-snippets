@@ -2,9 +2,9 @@
   "name": "javascript-snippets",
   "displayName": "JavaScript Snippets",
   "description": "JavaScript (ESNext) code snippets that allow for supercharged auto-completions.",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "engines": {
-    "vscode": "^1.38.0"
+    "vscode": "^1.85.0"
   },
   "author": {
     "name": "jabacchetta"
@@ -46,6 +46,14 @@
       },
       {
         "language": "typescript",
+        "path": "./snippets/snippets.json"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./snippets/snippets.json"
+      },
+      {
+        "language": "typescriptreact",
         "path": "./snippets/snippets.json"
       }
     ]

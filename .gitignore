@@ -2,5 +2,11 @@
 .idea/
 .DS_Store
 
-# Visual Studio Code Local History Extension
-.history/
+# Visual Studio Code Settings
+.vscode/settings.json
+
+# Extension Package
+*.vsix
+
+# VSCE PAT
+.env

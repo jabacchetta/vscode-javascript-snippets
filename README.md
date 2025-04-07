@@ -1,10 +1,5 @@
 # JavaScript Snippets (VSCode Extension)
 
-[![Inline (VSCode extension) version badge](https://vsmarketplacebadge.apphb.com/version-short/jabacchetta.javascript-snippets.svg?color=blue&style=?style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=jabacchetta.javascript-snippets)
-[![Inline (VSCode extension) installs badge](https://vsmarketplacebadge.apphb.com/installs-short/jabacchetta.javascript-snippets.svg?color=blue)](https://marketplace.visualstudio.com/items?itemName=jabacchetta.javascript-snippets)
-[![Inline (VSCode extension) rating badge](https://vsmarketplacebadge.apphb.com/rating-short/jabacchetta.javascript-snippets.svg?color=blue)](https://marketplace.visualstudio.com/items?itemName=jabacchetta.javascript-snippets)
-[![MIT license badge](https://img.shields.io/badge/license-MIT-orange.svg?color=blue)](http://opensource.org/licenses/MIT)
-
 ## VSCode Masterclass (Coming Soon)
 
 Follow [on Twitter](https://twitter.com/devcastcode) and [subscribe at DevCast](https://www.devcast.app/) to get priority access.
